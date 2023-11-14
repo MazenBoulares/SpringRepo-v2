@@ -2,7 +2,7 @@ package tn.esprit.spring.DAO.Entities;
 
 
 import jakarta.persistence.*;
-import java.sql.Date;
+
 
 import lombok.Data;
 import lombok.AllArgsConstructor;
@@ -11,20 +11,23 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
+
+
 @Entity
-@Table(name="Bloc")
-public class Bloc {
+@Table(name="Chambre")
+public class Chambre {
 
     @Id
-    @Column(name="idBloc")
+    @Column(name="idChambre")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
-    private String nomlboc;
+
+    private long numeroChambre;
 
 
-    private long capaciteBloc;
-
-
+    @Enumerated(EnumType.STRING)
+    private TypeChambre typeC;
 
 
 }

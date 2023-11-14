@@ -1,8 +1,22 @@
 package tn.esprit.spring.DAO.Entities;
 
-
 import jakarta.persistence.*;
+import lombok.Data;
+
 import java.sql.Date;
+
+
+import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
+
+
+
 @Entity
 @Table(name="Etudiant")
 public class Etudiant {
