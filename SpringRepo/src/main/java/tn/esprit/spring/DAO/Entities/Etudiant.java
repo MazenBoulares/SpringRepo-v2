@@ -1,18 +1,19 @@
 package tn.esprit.spring.DAO.Entities;
 
 import jakarta.persistence.*;
-import lombok.Data;
 
 import java.sql.Date;
+import java.util.List;
+
+import lombok.*;
 
 
-import lombok.Data;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
-@Data
-@AllArgsConstructor
+@Getter
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 
 
 
@@ -33,6 +34,9 @@ public class Etudiant {
     private String ecole;
 
     private Date datenaissance;
+
+    @ManyToMany(mappedBy = "etudiantsList")
+    List<Reservation> reservations;
 
 
 }

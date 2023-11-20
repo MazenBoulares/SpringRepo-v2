@@ -1,18 +1,21 @@
 package tn.esprit.spring.DAO.Entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
 import java.sql.Date;
+import java.util.List;
 
-import lombok.Data;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
-@AllArgsConstructor
+
+
+
+@Getter
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
+
 
 @Entity
 @Table(name="Reservation")
@@ -26,5 +29,8 @@ public class Reservation {
 
 
     private boolean estvalide;
+
+    @ManyToMany
+    List<Etudiant> etudiantsList;
 
 }

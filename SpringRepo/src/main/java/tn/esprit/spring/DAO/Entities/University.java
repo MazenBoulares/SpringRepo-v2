@@ -4,12 +4,19 @@ import jakarta.persistence.*;
 
 
 import lombok.Data;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
-@Data
-@AllArgsConstructor
+
+import lombok.*;
+
+import lombok.Data;
+
+
+@Getter
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
+
 
 
 @Entity
@@ -26,5 +33,8 @@ public class University {
 
 
     private String adresse;
+
+    @OneToOne
+    Foyer foyer;
 
 }

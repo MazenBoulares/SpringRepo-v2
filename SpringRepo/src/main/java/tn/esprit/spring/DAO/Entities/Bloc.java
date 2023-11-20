@@ -3,14 +3,20 @@ package tn.esprit.spring.DAO.Entities;
 
 import jakarta.persistence.*;
 import java.sql.Date;
+import java.util.List;
+
+import lombok.*;
 
 import lombok.Data;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
-@Data
-@AllArgsConstructor
+
+@Getter
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
+
+
 @Entity
 @Table(name="Bloc")
 public class Bloc {
@@ -24,6 +30,11 @@ public class Bloc {
 
     private long capaciteBloc;
 
+    @ManyToOne
+    Foyer foyer;
+
+    @OneToMany(mappedBy = "bloc")
+    List<Chambre> chambresList;
 
 
 

@@ -2,14 +2,19 @@ package tn.esprit.spring.DAO.Entities;
 
 import jakarta.persistence.*;
 
+import lombok.*;
 
 import lombok.Data;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
-@Data
-@AllArgsConstructor
+import java.util.List;
+
+
+@Getter
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
+
 
 
 @Entity
@@ -24,6 +29,14 @@ public class Foyer {
     private String nomFoyer;
 
     private long capaciteFoyer;
+
+
+    @OneToMany(mappedBy = "foyer")
+    List<Bloc> blocsList;
+
+    @OneToOne(mappedBy = "foyer")
+    University university;
+
 
 
 }
