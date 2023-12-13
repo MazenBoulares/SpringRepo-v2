@@ -25,7 +25,7 @@ public class Bloc {
     @Column(name="idBloc")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
-    private String nomlboc;
+    private String nomBloc;
 
 
     private long capaciteBloc;
