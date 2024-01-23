@@ -34,7 +34,7 @@ public class University {
 
     private String adresse;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     Foyer foyer;
 
 }

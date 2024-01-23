@@ -13,13 +13,13 @@ public interface EtudiantRepository extends JpaRepository<Etudiant, Long> {
     ;
     //select * from Etudiant where cin=...
 
-    Etudiant findByCin(long cin);
-
-    List<Etudiant> findByNomEtLike(String nom);
-
-    List<Etudiant> findByNomEtContains(String nom);
-
-    List<Etudiant> findByNomEtContaining(String nom);
+//    Etudiant findByCin(long cin);
+//
+//    List<Etudiant> findByNomEtLike(String nom);
+//
+//    List<Etudiant> findByNomEtContains(String nom);
+//
+//    List<Etudiant> findByNomEtContaining(String nom);
 
 
 }
