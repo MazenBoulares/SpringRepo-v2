@@ -6,12 +6,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import tn.esprit.spring.DAO.Entities.Bloc;
 import tn.esprit.spring.DAO.Entities.Chambre;
+import tn.esprit.spring.DAO.Entities.Reservation;
 import tn.esprit.spring.DAO.Entities.TypeChambre;
 
 @Repository
 public interface ChambreRepository extends JpaRepository<Chambre, Long> {
     //1- Recherche par numéro de chambre
-//    Chambre findByNumeroChambre(long numChambre);
+    Chambre findByNumeroChambre(long numChambre);
 //
 //    //2- Recherche par type de chambre
 //    List<Chambre> findByTypeC(TypeChambre typeC);
@@ -32,5 +33,13 @@ public interface ChambreRepository extends JpaRepository<Chambre, Long> {
 //            int reservationAnnee,String etudiantNom, String numero
 //    );
 
+
+
+//    public Reservation ajouterReseervationEtAssignerACahmbreEtEtudiant(
+//            Long numChambre, String cin){
+//
+//
+//
+//    }
 
 }

@@ -1,12 +1,15 @@
-package tn.esprit.spring.Services;
+package tn.esprit.spring.DAO.Services;
 
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.spring.DAO.Entities.Bloc;
+import tn.esprit.spring.DAO.Entities.Chambre;
 import tn.esprit.spring.DAO.Repositories.BlocRepository;
+import tn.esprit.spring.DAO.Repositories.ChambreRepository;
 import tn.esprit.spring.DAO.Services.IBlocService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,6 +19,8 @@ import java.util.Optional;
 public class BlocService implements IBlocService{
 
     BlocRepository blocRepository;
+
+    ChambreRepository chambreRepository;
 
     @Override
     public Bloc addBloc(Bloc b){
@@ -59,6 +64,39 @@ public class BlocService implements IBlocService{
 public   void deleteBlocById(long id){
     blocRepository.deleteById(id);
 };
+
+
+
+
+
+public Bloc affecterChambresABloc(List<Long> numChambre,String nomBloc){
+
+    Bloc b= blocRepository.selectByNomBSQLK(nomBloc);
+    Chambre c=new Chambre();
+
+
+    // manst7a9 nbadl ken fl parent, no need to update the child
+
+
+    for(Long l:numChambre){
+        c=chambreRepository.findByNumeroChambre(l);
+
+        c.setBloc(b);
+
+        chambreRepository.save(c);
+
+
+    }
+
+
+
+
+return b;
+}
+
+
+
+
 
 
 

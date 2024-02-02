@@ -23,7 +23,7 @@ public class Reservation {
 
     @Id
     @Column(name="idReservation")
-    long idReservation;
+    String idReservation;
 
     private Date anneeuniversitaire;
 

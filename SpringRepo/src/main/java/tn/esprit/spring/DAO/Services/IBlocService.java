@@ -17,4 +17,9 @@ public interface IBlocService {
     void deleteBlocById(long id);
 //    void deleteBlocById(long id);
 //    Optional<Bloc>  findBlocByID2(long id);
+
+
+   Bloc affecterChambresABloc(List<Long> numChambre,String nomBloc);
+
+
 }

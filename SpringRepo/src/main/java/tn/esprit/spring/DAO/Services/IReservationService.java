@@ -12,7 +12,7 @@ public interface IReservationService {
     List<Reservation> addAllReservations(List<Reservation> Reservations);
     Reservation updateReservation(Reservation b);
     List<Reservation> findAllReservations();
-    Reservation findReservationById(String id);
+//    Reservation findReservationById(String id);
     void deleteReservation(Reservation b);
     void deleteReservationById(String id);
 //    void deleteReservationById(long id);

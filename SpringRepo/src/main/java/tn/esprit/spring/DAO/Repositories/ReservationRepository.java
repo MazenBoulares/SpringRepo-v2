@@ -18,4 +18,10 @@ public interface ReservationRepository extends JpaRepository<Reservation, String
 //    // 3- Recherche des réservations par année et validité
 //    List<Reservation> findByAnneUniversitaireAndEstValideTrue(int year);
 
+
+
+
+
+
+
 }

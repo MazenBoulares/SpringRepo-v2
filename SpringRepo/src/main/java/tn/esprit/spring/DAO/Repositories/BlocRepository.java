@@ -3,6 +3,7 @@ package tn.esprit.spring.DAO.Repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import tn.esprit.spring.DAO.Entities.Bloc;
 
@@ -20,8 +21,8 @@ public interface BlocRepository extends JpaRepository<Bloc,Long> {
 //    Bloc selectByNomBSQLK(@Param("nom") String nom);
 //
 //
-//    @Query(value="SELECT * FROM Bloc where nom_bloc:=nom",nativeQuery=true)
-//    Bloc selectByNomBSQLK(@Param("nom") String nom);
+    @Query(value="SELECT * FROM Bloc where nom_bloc:=nom",nativeQuery=true)
+    Bloc selectByNomBSQLK(@Param ("nom") String nom);
 
 
 //

@@ -1,4 +1,4 @@
-package tn.esprit.spring.Services;
+package tn.esprit.spring.DAO.Services;
 
 
 import lombok.AllArgsConstructor;
@@ -44,10 +44,10 @@ public class ReservationService implements IReservationService{
     };
 
 
-    public Reservation findReservationById(String id){
-        return ReservationRepository.findById(id).orElse(Reservation.builder().idReservation(0).build());
-
-    };
+//    public Reservation findReservationById(String id){
+//        return ReservationRepository.findById(id).orElse(Reservation.builder().idReservation(0).build());
+//
+//    };
 
     public void deleteReservation(Reservation b){
         ReservationRepository.delete(b);
@@ -59,6 +59,13 @@ public class ReservationService implements IReservationService{
     public   void deleteReservationById(String id){
         ReservationRepository.deleteById(id);
     };
+
+
+//public Reservation ajouterReseervationEtAssignerACahmbreEtEtudiant(
+//        Long numChambre, String cin){
+//
+//}
+
 
 
 
